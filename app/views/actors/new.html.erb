@@ -1,0 +1,11 @@
+<%= form_with(model: @actor) do |f|%>
+<dl>
+  <dd><%= f.label :name %></dd>
+  <dt><%= f.text_field :name%></dt>
+  <dd><%= f.label :nationality %></dd>
+  <dt><%= f.text_field :nationality%></dt>
+  <dd><%= f.label :birth %></dd>
+  <dt><%= f.number_field :birth%></dt>
+</dl>
+  <%= f.submit 'Salvar', class: 'btn-confirm'%>
+<% end %>
