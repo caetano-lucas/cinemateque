@@ -10,10 +10,9 @@ describe 'usuario registra um novo papel' do
     click_on 'Atores'
     click_on 'Detalhes actor1'
     click_on 'Adicionar novo papel em um filme'
+    fill 'filme', with: ''
+    click_on 'Salvar'
 
-    expect(page).to have_content 'Ator1'
-    expect(page).to have_content 'Brasileiro'
-    expect(page).to have_content '1992'
-    expect(current_path).to eq actors_path
+    expect(current_path).to eq actor_path(ator1.id)
   end
 end
