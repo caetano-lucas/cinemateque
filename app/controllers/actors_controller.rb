@@ -9,6 +9,9 @@ class ActorsController < ApplicationController
       redirect_to actors_path
     end
   end
+  def show
+    @actor = Actor.find(params[:id])
+  end
   def index
     @actors = Actor.all
   end

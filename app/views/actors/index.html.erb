@@ -1,10 +1,21 @@
 <div>
   <%= button_link 'Cadastrar novo Ator', new_actor_path%>
 </div>
-
-<div>
-  <%= @actors.each do |actor| %>
-  <dl>
-    
-  </dl>
-</div>
+<table>
+  <thead>
+    <th>Nome</th>
+    <th>Nacionalidade</th>
+    <th>Data de Nascimento</th>
+    <th>Detalhes</th>
+  </thead>
+  <tbody>
+    <% @actors.each do |actor| %>
+      <tr>
+        <td><%= actor.name %></td>
+        <td><%= actor.nationality %></td>
+        <td><%= actor.birth %></td>
+        <td> <%= button_link "Detalhes #{actor.name}", actor_path(actor)%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
